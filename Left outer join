@@ -1,0 +1,24 @@
+CREATE TABLE Student (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50)
+);
+CREATE TABLE Marks (
+    mark_id INT PRIMARY KEY,
+    student_id INT,
+    marks INT
+);
+INSERT INTO Student VALUES
+(1, 'Amit'),
+(2, 'Suman'),
+(3, 'Rahul'),
+(4, 'Priya');
+INSERT INTO Marks VALUES
+(101, 1, 85),
+(102, 2, 90),
+(103, 3, 70);
+SELECT Student.student_id,
+       Student.name,
+       Marks.marks
+FROM Student
+LEFT OUTER JOIN Marks
+ON Student.student_id = Marks.student_id;
